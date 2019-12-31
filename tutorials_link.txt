@@ -1,0 +1,15 @@
+1 Supervised Learning
+
+
+2 UnSupervised Learning
+
+
+3 Logical Regression with Single Varaibles
+
+
+
+4 Logical Regression with Multiple Varaibles
+
+
+
+5 Classification
