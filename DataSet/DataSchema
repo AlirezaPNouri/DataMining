@@ -1,0 +1,490 @@
+#Source: https://developer.datafiniti.co/docs/product-data-schema
+#Source: https://www.kaggle.com/datafiniti/consumer-reviews-of-amazon-products#1429_1.csv
+
+The product data schema below lists all available fields in a product record. Note that actual product records (actually, most of them) may not have every field present.
+
+Field Name	Example Value (in JSON)	Description
+asins
+
+"asins": [
+  "B0009XCFRE"
+]
+A list of ASINs (Amazon identifiers) used for this product.
+
+brand
+
+"brand": "Worthington"
+The brand name of this product.
+
+categories
+
+"categories": [
+  "Home Improvement",
+  "Heating, Cooling, & Air Quality",
+  "Heaters",
+  "Propane Heaters"
+]
+A list of category keywords used for this product across multiple sources.
+
+colors
+
+"colors": [
+  "White",
+  "Black"
+]
+A list of colors available for this product.
+
+count
+
+"count": "30"
+The number of units included in the product packaging. Can include a description of the unit.
+
+dateAdded
+
+"dateAdded": "2017-01-08T19:12:13Z"
+The date this product was first added to the product database.
+
+dateUpdated
+
+"dateUpdated": "2017-01-08T19:12:13Z"
+The most recent date this product was updated or seen by our system.
+
+descriptions
+
+"descriptions": [
+  {
+    "dateSeen": [
+      "2017-01-08T19:12:13Z"
+    ]
+    "sourceURLs": [ 
+      "https://www.domain.com/p/123"
+    ],
+    "value": "Now you can enjoy cooking your favorite food."
+  },
+  {
+    "sourceURLs": [
+      "http://www.website.com/4567"
+    ],
+    "value": "The Worthington Pro Grade 20 lb. Empty Propane Tank goes with your gas barbecue grill (sold separately) and accommodates 4.7 gallons of gas."
+  }
+]
+A list of descriptions for this product from various sources. Each description contains:
+
+dateSeen: A list of dates when this description has been seen selling this product.
+sourceURLs: A list of source URLs where this specific description was seen.
+value: A unique description for this product.
+dimension
+
+"dimension": "23 in x 43.7 in x 30 in"
+The length, width, and height of this product. Units included.
+
+ean
+
+"ean": [
+  "0014045125963",
+  "0014045125965"
+]
+The EAN codes for this product. There may be more than one EAN in the list when a product has multiple variations,
+each using a different EAN.
+Learn more about EANs.
+
+ean13
+
+"ean13":"0014045125963"
+The EAN-13 code for this product. Learn more about EANs.
+
+ean8
+
+"ean8":"96385074"
+The EAN-8 code for this product. Learn more about EANs.
+
+financingAndLeasing
+
+"financingAndLeasing": [
+  {
+    "additionalDetails": [
+      "acquisitionFee: $925",
+      "mileOverageFee: $0.30/mile"
+    ],
+    "apr": 4.15,
+    "currency": "USD",
+    "dateSeen": [
+      "2018-09-20T04:00:00Z"
+    ],
+    "description": "Well equipped with features such as Driving Assistance",
+    "disclaimers": "Offer not valid in Puerto Rico. Lease financing available",
+    "dueAtSigningMax": 7694,
+    "dueAtSigningMin": 7694,
+    "milesPerYear": 22500,
+    "monthlyPaymentMax": 1269,
+    "monthlyPaymentMin": 1269,
+    "name": "2018 Civic Si Coupe 6 Speed Manual Featured Special Lease",
+    "offerStartDate": "2018-10-31T00:00:00.000Z",
+    "offerEndDate": "2018-09-05T00:00:00.000Z",
+    "term": "36 months",
+    "type": "leasing",
+    "securityDepositMax": 0,
+    "securityDepositMin": 0,
+    "sourceURLs": [
+    ]
+  }
+]
+A list of financing or leasing terms associated with this product. Each term may contain:
+
+additionalDetails: Any additional information related to this term.
+apr: The annual percentage rate.
+currency: The currency listed for any monetary values.
+dateSeen: A list of dates when this term was seen.
+description: The description provided for this term.
+disclaimers: Any disclaimers associated with this term.
+dueAtSigningMax: The maximum monetary amount due when purchasing this product under this term.
+dueAtSigningMin: The minimum monetary amount due when purchasing this product under this term.
+milesPerYear: Usually associated with vehicles, the maximum mileage allowed under this term.
+monthlyPaymentMax: The maximum amount due each month under this term.
+monthlyPaymentMin: The minimum amount due each month under this term.
+name: The name for this term.
+type: Either financing or leasing.
+securityDepositMax: The maximum security deposit for this term.
+securityDepositMin: The minimum security deposit for this term.
+sourceURLs: A list of URLs where this term was seen.
+features
+
+"features": [
+  {
+    "key": "Count",
+    "value": [
+      "1"
+    ]
+  },
+  {
+    "key": "Included",
+    "value": [
+      "Batteries"
+    ]
+  }
+]
+A list of features associated with this product. The feature list can be collected from specific feature sections available on product listings for the product. It can also serve as a catch-all field for miscellaneous characteristics of this product that don't make sense to include as top-level fields.
+
+Each feature contains:
+
+key: A label for this feature.
+value: A list of possible values for this feature.
+flavors
+
+"flavors": [
+  "Fruit Punch",
+  "Berry",
+  "Grape"
+]
+A list of flavors available for this product.
+
+gtins
+
+"gtins": [
+  "0014045125963",
+  "0014045125965",
+  "014045125963",
+  "014045125961",
+  "425261",
+  "3882215542"
+]
+A list of all Global Trade Identifier Numbers for this product. Values will include all ean, isbn, and upc values.
+Learn more about GTINs.
+
+imageURLs
+
+"imageURLs": [
+  "https://i5.images.com/asr.jpeg"
+]
+A list of image URLs for this product.
+
+isbn
+
+"isbn": "3882215542"
+The ISBN code for this product. Learn more about ISBNs.
+
+keys
+
+"keys": [
+  "014045125963",
+  "0014045125963",
+  "worthington/299581"
+]
+A list of internal Datafiniti identifiers for this product. The keys field is used to merge raw data from individual sources into the master Datafiniti record. Learn how this works
+
+manufacturer
+
+"manufacturer": "Worthington"
+The manufacturer of this product.
+
+manufacturerNumber
+
+"manufacturerNumber": "299581"
+The manufacturer or model number of this product.
+
+merchants
+
+"merchants": [
+  {
+    "address": "2801 S Ih 35",
+    "availability": "...",
+    "city": "Austin",
+    "country": "US",
+    "dateSeen": [
+      "2017-01-08T19:12:13Z"
+    ],
+    "isPrivateSeller": false
+    "name": "Zappysales",
+    "phone": "5127131234",
+    "postalCode": "78701",
+    "province": "TX"
+  },
+  {
+    "dateSeen": [
+      "2017-01-08T19:12:13Z"
+    ],
+    "name": "Next Day Mro, Llc"
+  }
+ ]
+A list of merchants selling this product. These are typically third-party merchants found on e-commerce websites.
+
+Merchant objects can contain:
+
+address: The merchant's physical address.
+availability: A description of the product's availability with this merchant.
+city: The merchant's city.
+dateSeen: A list of dates when this merchant has been seen selling this product.
+isPrivateSeller: True if the merchant is an individual. False if it's a company.
+name: The merchant's name.
+phone: The merchant's phone number.
+postalCode: The merchant's postal or zip code.
+province: The merchant's province or state.
+name
+
+"name": "Worthington 20-lb Tank"
+The product's name.
+
+prices
+
+"prices": [
+  {
+    "amountMin": 59.96,
+    "amountMax": 59.96,
+    "availability": "true",
+    "color": "Red",
+    "condition": "New",
+    "count": "15",
+    "currency": "USD",
+    "dateSeen": [
+      "2016-06-10T00:00:00Z"
+    ],
+    "flavor": "Cherry",
+    "isSale": "false",
+    "isSold": "false",
+    "merchant": "domain.com",
+    "offer": "22% off",
+    "returnPolicy": "90-Day",
+    "shipping": "FREE shipping",
+    "size": "S",
+    "sourceURLs": [
+      "https://www.domain.com/p/123",
+     "warranty": "..."
+    ]
+  },
+  {
+    "amountMin": 62.06,
+    "amountMax": 72.06,
+    "condition": "new",
+    "currency": "USD",
+    "dateSeen": [
+      "2016-10-28T00:00:00Z"
+    ],
+    "merchant": "MRO - website.com",
+    "sourceURLs": [
+      "http://www.website.com/4567"
+    ]
+  }
+]
+A list of prices for this product.
+
+Price objects may contain:
+
+amountMin: The minimum price value listed.
+amountMax: The maximum price value listed. This is typically the same as amountMin, except in cases where a price range is listed.
+availability: A true or false if this product is available at this price.
+color: The color associated with this price.
+condition: The condition of the product when being sold at this price.
+count: The number of units being sold at this price.
+currency: The currency listed for amountMin and amountMax.
+dateSeen: A list of dates when this price was seen.
+flavor: The flavor associated with this price.
+isSale: A true/false for whether or not this price is a sale/discounted price.
+isSold: A true/flase for whether or not the product has been sold at this price (typically reserved for vehicle listings).
+merchant: The merchant and/or website selling at this price.
+offer: Any special offer associated with this price.
+returnPolicy: The return policy associated with this price.
+shipping: The shipping terms associated with this price.
+size: The size associated with this price.
+sourceURLs: A list of URLs where this price was seen.
+warranty: The warranty associated with this price.
+primaryCategories
+
+"primaryCategories": [
+  "Electronics"
+]
+A list of standardized categories to which this product belongs. Category values can be found here.
+
+primaryImageURLs
+
+"primaryImageURLs: [
+   "https://www.amazon.com/i/123.jpg"
+  "https://www.target.com/i/abc.jpg"
+]
+A list of URLs for the primary images taken from each domain sourced in this record. This list will only contain 1 URL per domain.
+
+quantities
+
+"quantities": [ 
+  {
+    "dateSeen": [
+      "2013-06-02T16:00:00Z",
+      "2014-05-01T14:00:00Z"
+    ], 
+    "sourceURLs": [
+      "http://www.website.com/4567"
+    ],
+    "value": 20
+  }
+]
+A list of available quantities for this product. Quantities indicate how many units of the product are available from a specific source at a given time.
+
+Quantity objects may contain:
+
+dateSeen: A list of dates when this quantity was seen.
+sourceURLs: A list of URLs where this quantity was seen.
+value: The actual quantity value.
+reviews
+
+"reviews": [
+  {
+    "date": "2015-06-16T00:00:00Z",
+    "dateSeen": [
+      "2016-05-15T00:00:00Z"
+    ],
+    "didPurchase": true,
+    "doRecommend": true,
+    "id": "1234"
+    "numHelpful": 4,
+    "rating": 4,
+    "sourceURLs": [
+        "http://www.website.com/4567"
+    ],
+    "text": "Nice tank at a below average cost for propane tanks.",
+    "title": "Solid Propane Tank",
+    "userCity": "...",
+    "username": "Cole33",
+    "userProvince": "..."
+  },
+  {
+    "date": "2015-01-06T00:00:00Z",
+    "dateSeen": [
+      "2016-05-15T00:00:00Z"
+    ],
+    "rating": 5,
+    "sourceURLs": [
+        "https://www.domain.com/p/123"
+      ],
+    "text": "Holds propane and does not leak. Completed the given gift.",
+    "title": "tanked",
+    "username": "joel01"
+  }
+]
+A list of reviews for this product.
+
+Review objects may contain:
+
+date: The date the review was posted.
+dateSeen: A list of dates when the review was seen by Datafiniti.
+didPurchase: A true/false for whether or not the reviewer did purchase the product.
+doRecommend: A true/false for whether or not the reviewer recommends the product.
+id: The website ID associated with this review.
+numHelpful: The number of people that found this review helpful.
+rating: A 1 to 5 start value for the review.
+sourceURLs: A list of URLs where this review was seen.
+text: The full (or available) text of the review.
+title: The review's title.
+userCity: The reviewer's city.
+username: The reviewer's username.
+userProvince: The reviewer's province or state.
+sizes
+
+"sizes": [
+  "Large",
+  "Medium",
+  "Small"
+]
+A list of sizes available for this product.
+
+skus
+
+"skus": [
+  {
+    "sourceURLs": [
+      "http://www.web.com/p/123"
+    ],
+    "value": "1234XK6"
+  }
+]
+A list of SKUs for this product. SKUs are typically specific to individual retailers or websites.
+
+SKU objects may contain:
+
+sourceURLs: A list of URLs where this SKU was seen.
+value: The actual SKU.
+sourceURLs
+
+"sourceURLs": [
+  "https://www.domain.com/p/123",
+  "http://www.website.com/4567"
+]
+A list of URLs used to generate data for this product.
+
+upc
+
+"upc": [
+  "014045125963",
+  "014045125961"
+]
+The UPC code for this product.
+There may be more than one UPC in the list when a product has multiple variations,
+each using a different UPC. Learn more about UPCs.
+
+upca
+
+"upca":"014045125963"
+The UPC-A code for this product. Learn more about UPCs.
+
+upce
+
+"upce":"425261"
+The UPC-E code for this product. Learn more about UPCs.
+
+vin
+
+"vin": "1FTMF1ET8EFB00361"
+The VIN code for this product. This is specific to car listings. Learn more about VINs.
+
+websiteIDs
+
+"websiteIDs": [
+  "domain.com-123",
+  "website.com-4567"
+]
+A list of website IDs for this product. Website IDs are tied to a specific online retailer. They are the unique identifier used by website. They are used by Datafiniti when other unique identifiers are not available for a product.
+
+weight
+
+"weight": "20 lbs"
+The weight of the product. Units included.
+
+

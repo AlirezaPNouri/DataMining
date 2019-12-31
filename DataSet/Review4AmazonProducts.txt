@@ -1,0 +1,6 @@
+This dataset extracted from Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.
+Columns:
+['name', 'reviews.date', 'reviews.didPurchase', 'reviews.doRecommend', 'reviews.id', 'reviews.doRecommend',
+      'reviews.numHelpful', 'reviews.rating', 
+      'reviews.text', 'reviews.title', 'reviews.username']
+Number of samples: 28332
