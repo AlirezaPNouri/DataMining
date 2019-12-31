@@ -1,5 +1,5 @@
 General - https://www.guru99.com/machine-learning-tutorial.html
-
+Tutoial Basic Link: https://www.tutorialspoint.com/machine_learning_with_python/index.htm
 
 1 Supervised Learning
 
