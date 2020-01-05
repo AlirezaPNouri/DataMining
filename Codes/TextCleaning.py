@@ -1,3 +1,6 @@
+# Functions for preprocessing the text before feature extraction
+# Author: Alireza
+
 import string
 import regex
 import re
@@ -19,6 +22,10 @@ def removeStopwords(str):
 		if w not in stopWords: 
 			newStr.append(w)
 
+	# If you want the output as an array		
+	#return newStr;
+
+	# The output as a string
 	return " ".join(newStr);
 
 # This function removes the punctuations from the sentences. 
@@ -38,10 +45,14 @@ def removeURL(str):
 	return re.sub(r"http\S+", "", str);
 
 
+# Tokenization
 
 
 
-# Testin
+
+
+
+# Testing
 # exampleText = "First , is a great and awesome price for quality , digital piano , this piano has a lot offer for every level of player from beginner to , accomplished players great action on the keys weight and feel which makes a huge difference when practicing scales ad chord inversions , and all around piano , the electric pianos , perfect DAW and performing live and I use this piano both ways for the price you cant go wrong . https://www.amazon.com/Roland-88-Key-E.  this piano has a lot offer for every level of player from beginner"
 # print(removeStopwords(removeURL(removeUnicode(removePunctuation(exampleText)))))
 
