@@ -2,7 +2,6 @@
 # Author: Alireza
 
 import string
-import regex
 import re
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -44,5 +43,10 @@ def remove_url(str_):
 
 
 # Testing
-exampleText = "First , is a great and awesome price for quality , digital piano , this piano has a lot offer for every level of player from beginner to , accomplished players great action on the keys weight and feel which makes a huge difference when practicing scales ad chord inversions , and all around piano , the electric pianos , perfect DAW and performing live and I use this piano both ways for the price you cant go wrong . https://www.amazon.com/Roland-88-Key-E.  this piano has a lot offer for every level of player from beginner"
+exampleText = "First , is a great and awesome price for quality , digital piano , this piano has a lot offer for " \
+			  "every level of player from beginner to , accomplished players great action on the keys weight and feel " \
+			  "which makes a huge difference when practicing scales ad chord inversions , and all around piano , " \
+			  "the electric pianos , perfect DAW and performing live and I use this piano both ways for the price you " \
+			  "cant go wrong . https://www.amazon.com/Roland-88-Key-E.  this piano has a lot offer for every level of " \
+			  "player from beginner "
 print(remove_stopwords(remove_url(remove_unicode(remove_punctuation(exampleText)))))
