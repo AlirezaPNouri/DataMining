@@ -16,3 +16,6 @@ Tutoial Basic Link: https://www.tutorialspoint.com/machine_learning_with_python/
 
 
 5 Classification
+
+
+Scale, Standardize, or Normalize with Scikit-Learn - https://towardsdatascience.com/scale-standardize-or-normalize-with-scikit-learn-6ccc7d176a02
