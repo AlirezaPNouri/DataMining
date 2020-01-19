@@ -3,11 +3,14 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+
+
 import numpy as np
 
-path = ""+"Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.csv"
 
-df = pd.read_csv(path, usecols=['name', 'reviews.date', 'reviews.didPurchase', 'reviews.doRecommend', 'reviews.id', 'reviews.doRecommend',
+path = ""+"Review4AmazonProducts.csv"
+
+df = pd.read_csv(path, usecols=['name', 'reviews.date', 'reviews.didPurchase', 'reviews.doRecommend', 'reviews.id', 
        'reviews.numHelpful', 'reviews.rating', 
        'reviews.text', 'reviews.title', 'reviews.username'], skipinitialspace=True )
 
