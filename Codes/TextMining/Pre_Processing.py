@@ -5,7 +5,9 @@ import re
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import datetime
-
+import numpy as np
+from sklearn import preprocessing
+from sklearn.preprocessing import MinMaxScaler
 
 
 class Text_Preprocessing:
@@ -38,6 +40,8 @@ class Text_Preprocessing:
             return re.sub(r"http\S+", "", str);
         else:
             return ''
+
+
 class Time_Preprocessing:
     # This function change the date from time format into the integer
     def date_dey_integer(dataframe, name):
@@ -50,3 +54,22 @@ class Time_Preprocessing:
         del dataframe[name]
         dataframe[name] = new_date
         return dataframe
+
+
+# This code has functions to scale, normalize the numeric features
+class Feature_Normalization:
+    # Change the range of values for larger values
+    def standardScaleFeatures(featureArray):
+        return preprocessing.StandardScaler(featureArray)
+
+    # Change the range of values
+    def scaleFeatures(featureArray):
+        return preprocessing.scale(featureArray)
+
+    def minMaxScaleFeatures(new_date):
+        dates = np.reshape(new_date, (len(new_date), 1))
+        # train the normalization
+        scaler = MinMaxScaler(feature_range=(0, 1))
+        scaler = scaler.fit(dates)
+        # normalize the dataset and print the first 5 rows
+        return scaler.transform(dates)
