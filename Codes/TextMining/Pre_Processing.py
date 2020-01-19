@@ -8,7 +8,7 @@ import datetime
 
 
 
-class Pre_Processing:
+class Text_Preprocessing:
     # This function removes stopwords from a text.
     def removeStopwords(str):
         stopWords = set(stopwords.words('english'))
@@ -34,8 +34,11 @@ class Pre_Processing:
 
     # This function removes URL's from a text.
     def removeURL(str):
-        return re.sub(r"http\S+", "", str);
-
+        if not str:
+            return re.sub(r"http\S+", "", str);
+        else:
+            return ''
+class Time_Preprocessing:
     # This function change the date from time format into the integer
     def date_dey_integer(dataframe, name):
         new_date = []
@@ -47,6 +50,3 @@ class Pre_Processing:
         del dataframe[name]
         dataframe[name] = new_date
         return dataframe
-# Testin
-# exampleText = "First , is a great and awesome price for quality , digital piano , this piano has a lot offer for every level of player from beginner to , accomplished players great action on the keys weight and feel which makes a huge difference when practicing scales ad chord inversions , and all around piano , the electric pianos , perfect DAW and performing live and I use this piano both ways for the price you cant go wrong . https://www.amazon.com/Roland-88-Key-E.  this piano has a lot offer for every level of player from beginner"
-# print(removeStopwords(removeURL(removeUnicode(removePunctuation(exampleText)))))
