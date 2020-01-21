@@ -29,11 +29,7 @@ crow, ccol = rows//2, cols//2
 # create a mask first, center square is 1, remaining all zeros
 mask = np.zeros((rows, cols, 2), np.uint8)
 mask[crow-30:crow+30, ccol-30:ccol+30] = 1
-# apply mask and inverse DFT
-fshift = dft_shift*mask
-f_ishift = np.fft.ifftshift(fshift)
-img_back = cv2.idft(f_ishift)
-img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
+
 # Showing the images
 plt.subplot(221), plt.imshow(img, cmap='gray')
 plt.title('Input Image'), plt.xticks([]), plt.yticks([])
