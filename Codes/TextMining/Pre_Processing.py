@@ -75,6 +75,5 @@ class Feature_Normalization:
         min_norm = -1
         max_norm = 1
         dataFrameColumn = (dataFrameColumn - min_a) * (max_norm - min_norm) / (max_a - min_a) + min_norm
-        print(dataFrameColumn)
         return dataFrameColumn
 
