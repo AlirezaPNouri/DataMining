@@ -5,7 +5,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import datetime
-import numpy as np
+import pandas as pd
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 
@@ -58,6 +58,7 @@ class Time_Preprocessing:
 
 # This code has functions to scale, normalize the numeric features
 class Feature_Normalization:
+
     # Change the range of values for larger values
     def standardScaleFeatures(featureArray):
         return preprocessing.StandardScaler(featureArray)
@@ -66,10 +67,14 @@ class Feature_Normalization:
     def scaleFeatures(featureArray):
         return preprocessing.scale(featureArray)
 
-    def minMaxScaleFeatures(new_date):
-        dates = np.reshape(new_date, (len(new_date), 1))
-        # train the normalization
-        scaler = MinMaxScaler(feature_range=(0, 1))
-        scaler = scaler.fit(dates)
-        # normalize the dataset and print the first 5 rows
-        return scaler.transform(dates)
+    def minMaxScaleFeatures(dataFrameColumn):
+        #df = pd.read_csv('../../DataSet/Review4AmazonProducts.csv')
+        dataFrameColumn = pd.to_datetime(dataFrameColumn).astype('int64')
+        max_a = dataFrameColumn.max()
+        min_a = dataFrameColumn.min()
+        min_norm = -1
+        max_norm = 1
+        dataFrameColumn = (dataFrameColumn - min_a) * (max_norm - min_norm) / (max_a - min_a) + min_norm
+        print(dataFrameColumn)
+        return dataFrameColumn
+
