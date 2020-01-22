@@ -7,39 +7,39 @@ from nltk.tokenize import word_tokenize
 import datetime
 import pandas as pd
 from sklearn import preprocessing
-from sklearn.preprocessing import MinMaxScaler
 
 
 class Text_Preprocessing:
     # This function removes stopwords from a text.
-    def removeStopwords(str):
+    def removeStopwords(str_):
         stopWords = set(stopwords.words('english'))
-        wordTokens = word_tokenize(str)
-
-        newStr = [w for w in wordTokens if not w in stopWords]
+        wordTokens = word_tokenize(str_)
 
         newStr = []
-
         for w in wordTokens:
             if w not in stopWords:
                 newStr.append(w)
 
-        return " ".join(newStr);
+        return " ".join(newStr)
 
     # This function removes the punctuations from the sentences.
     def removePunctuation(str_):
-        return str_.translate(str.maketrans('', '', string.punctuation));
+        new_str = ''
+        for letter in str_:
+            if letter not in string.punctuation:
+                new_str += letter
+
+        return new_str
 
     # This function turns a sentence to ascii code (emojies will be removed).
-    def removeUnicode(str):
-        return str.encode('ascii', 'ignore').decode('utf-8');
+    def removeUnicode(str_):
+
+        return str_.encode('ascii', 'ignore').decode('utf-8');
 
     # This function removes URL's from a text.
-    def removeURL(str):
-        if not str:
-            return re.sub(r"http\S+", "", str);
-        else:
-            return ''
+    def removeURL(str_):
+
+        return re.sub(r"http\S+", " ", str_)
 
 
 class Time_Preprocessing:

@@ -15,10 +15,10 @@ data_frame = tp.date_dey_integer(data_frame, 'reviews.date')
 
 
 # Clean texts in the comments and titles
-# data_frame['reviews.text'] = data_frame['reviews.text'].apply(lambda str_: txtp.removeStopwords(txtp.removePunctuation(
-#     txtp.removeUnicode(txtp.removeURL(str_)))))
-# data_frame['reviews.title'] = data_frame['reviews.title'].apply(lambda str_: txtp.removeStopwords(
-#     txtp.removePunctuation(txtp.removeUnicode(txtp.removeURL(str_)))))
+data_frame['reviews.text'] = data_frame['reviews.text'].apply(lambda str_: txtp.removeStopwords(txtp.removePunctuation(
+    txtp.removeUnicode(txtp.removeURL(str_.lower())))))
+data_frame['reviews.title'] = data_frame['reviews.title'].apply(lambda str_: txtp.removeStopwords(
+    txtp.removePunctuation(txtp.removeUnicode(txtp.removeURL(str_.lower())))))
 
 
 # Normalizing the date feature
