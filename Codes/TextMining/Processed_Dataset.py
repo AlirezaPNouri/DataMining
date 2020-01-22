@@ -20,10 +20,10 @@ for inc in range(len(date_feature)):
 
 
 # Clean texts in the comments and titles
-#data_frame['reviews.text'] = data_frame['reviews.text'].apply(lambda str_: txtp.removeStopwords(txtp.removePunctuation(
-    #txtp.removeUnicode(txtp.removeURL(str_)))))
-#data_frame['reviews.title'] = data_frame['reviews.title'].apply(lambda str_: txtp.removeStopwords(
-    #txtp.removePunctuation(txtp.removeUnicode(txtp.removeURL(str_)))))
+data_frame['reviews.text'] = data_frame['reviews.text'].apply(lambda str_: txtp.removeStopwords(txtp.removePunctuation(
+    txtp.removeUnicode(txtp.removeURL(str_)))))
+data_frame['reviews.title'] = data_frame['reviews.title'].apply(lambda str_: txtp.removeStopwords(
+    txtp.removePunctuation(txtp.removeUnicode(txtp.removeURL(str_)))))
 fnorm.minMaxScaleFeatures(data_frame['reviews.date'])
 #data_frame['reviews.rating'] = data_frame['reviews.rating'].apply(lambda ratings_:
 fnorm.minMaxScaleFeatures(data_frame['reviews.rating'])
