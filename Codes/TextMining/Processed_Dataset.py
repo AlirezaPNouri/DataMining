@@ -2,9 +2,9 @@
 # Author: Alireza P. Nouri, Namrata Sharma
 
 import pandas as pd
-from DataMining.Codes.TextMining.Pre_Processing import Feature_Normalization as fnorm
-from DataMining.Codes.TextMining.Pre_Processing import Text_Preprocessing as txtp
-from DataMining.Codes.TextMining.Pre_Processing import Time_Preprocessing as tp
+from Pre_Processing import Feature_Normalization as fnorm
+from Pre_Processing import Text_Preprocessing as txtp
+from Pre_Processing import Time_Preprocessing as tp
 
 data_frame = pd.read_csv('../../DataSet/Review4AmazonProducts.csv')
 
